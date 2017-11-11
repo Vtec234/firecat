@@ -4,13 +4,12 @@ wf = require 'windfield'
 cat = {
   x = 256,
   y = 256,
+
   -- The first set of values are for our rudimentary physics system
   xVelocity = 0, -- current velocity on x, y axes
   yVelocity = 0,
   acc = 100, -- the acceleration of our cat
-  maxSpeed = 600, -- the top speed
   friction = 20, -- slow our cat down - we could toggle this situationally to create icy or slick platforms
-  gravity = 80, -- we will accelerate towards the bottom
 
   -- These are values applying specifically to jumping
   isJumping = false, -- are we in the process of jumping?
