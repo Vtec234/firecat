@@ -27,13 +27,13 @@ cat = {
 -- Loading
 function love.load(arg)
 	world = wf.newWorld(0, 0, true)
-	world:setGravity(0, 750)
+	world:setGravity(0, 500)
 	world:addCollisionClass('Player')
 
   -- Setup collision logic
   world:addCollisionClass('Ground')
   world:addCollisionClass('Wall')
-  world:addCollisionClass('Platform1')
+  world:addCollisionClass('Platform')
   world:addCollisionClass('DynObject')
   world:addCollisionClass('Cat')
 
@@ -56,10 +56,9 @@ function love.load(arg)
         if cy + ch/2 > ty - th/2 then
           print('below')
           contact:setEnabled(false)
-        end
         else
           contact:setEnabled(true)
-          --print('above')
+          print('above')
         end
       end
   end)
@@ -67,10 +66,13 @@ function love.load(arg)
   ground = world:newRectangleCollider(0, love.graphics.getHeight() - 20, love.graphics.getWidth(), 20)
   ground:setCollisionClass('Ground')
   ground:setType('static')
+  cat.body:setSleepingAllowed(false)
 end
 
 -- Updating
 function love.update(dt)
+  cat.body:setX(cat.body:getX() + cat.xVelocity)
+
   world:update(dt)
 
  	if cat.body:enter("Ground") or cat.body:enter("Platform") then
@@ -78,15 +80,15 @@ function love.update(dt)
  		cat.isDoubleJumping = false
  	end
 
-	x, y = cat.body:getPosition()
-	cat.body:setPosition(x + cat.xVelocity, y)
+
+  print(cat.y)
 
   -- Apply Friction
   cat.xVelocity = cat.xVelocity * (1 - math.min(dt * cat.friction, 1))
   cat.yVelocity = cat.yVelocity * (1 - math.min(dt * cat.friction, 1))
 
-  	if love.keyboard.isDown("left") then
-  		keydown("left", dt)
+  if love.keyboard.isDown("left") then
+    keydown("left", dt)
 	elseif love.keyboard.isDown("right") then
 		keydown("right", dt)
 	end
@@ -94,7 +96,7 @@ end
 
 -- Drawing
 function love.draw()
-  	world:draw()
+  world:draw()
 
 	love.graphics.draw(cat.img, cat.x, cat.y)
 end
@@ -104,18 +106,18 @@ function love.keypressed(key)
 	if key == "up" then
 		if cat.isJumping == true then
 			if cat.isDoubleJumping == false then
-				cat.body:applyLinearImpulse(0, -500)
+				cat.body:applyLinearImpulse(0, -cat.jumpAcc)
 				cat.isDoubleJumping = true
 			end
 		else
-			cat.body:applyLinearImpulse(0, -500)
+			cat.body:applyLinearImpulse(0, -cat.jumpAcc)
 			cat.isJumping = true
 		end
 	end
 end
 
 function keydown(key, dt)
-  	if key == "left" and cat.xVelocity > -cat.maxSpeed then
+  if key == "left" and cat.xVelocity > -cat.maxSpeed then
 		cat.xVelocity = cat.xVelocity - cat.acc * dt
 	elseif key == "right" and cat.xVelocity < cat.maxSpeed then
 		cat.xVelocity = cat.xVelocity + cat.acc * dt
