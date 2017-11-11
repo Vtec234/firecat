@@ -1,4 +1,5 @@
 wf = require 'windfield'
+anim8 = require 'anim8'
 
 -- The finished cat object
 cat = {
@@ -22,6 +23,13 @@ cat = {
   -- Here are some incidental storage areas
   img = love.graphics.newImage('assets/cat.png'), -- store the sprite we'll be drawing
   body = nil
+}
+
+world = {
+  z = 256,
+
+
+
 }
 
 -- Loading
@@ -71,7 +79,9 @@ end
 
 -- Updating
 function love.update(dt)
-  cat.body:setX(cat.body:getX() + cat.xVelocity)
+  cat.x, cat.y = cat.body:getPosition()
+  cat.x = cat.x + cat.xVelocity
+  cat.body:setX(cat.x)
 
   world:update(dt)
 
@@ -79,9 +89,6 @@ function love.update(dt)
  		cat.isJumping = false
  		cat.isDoubleJumping = false
  	end
-
-
-  print(cat.y)
 
   -- Apply Friction
   cat.xVelocity = cat.xVelocity * (1 - math.min(dt * cat.friction, 1))
