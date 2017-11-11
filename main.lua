@@ -33,7 +33,7 @@ function love.load(arg)
   -- Setup collision logic
   world:addCollisionClass('Ground')
   world:addCollisionClass('Wall')
-  world:addCollisionClass('Platform')
+  world:addCollisionClass('Platform1')
   world:addCollisionClass('DynObject')
   world:addCollisionClass('Cat')
 
@@ -45,14 +45,22 @@ function love.load(arg)
   cat.body:setType('dynamic')
 	cat.body:setRestitution(0.0)
   cat.body:setCollisionClass('Cat')
+  cat.body:setFixedRotation(true)
 
   cat.body:setPreSolve(function(col1, col2, contact)
       if col1.collision_class == 'Cat' and col2.collision_class == 'Platform' then
         local cx, cy = col1:getPosition()
-        local cw, ch = 400, 200
+        local cw, ch = 20, 40
         local tx, ty = col2:getPosition()
-        local tw, th = 20, 60
-        if cy + ch/2 > ty - th/2 then contact:setEnabled(false) end
+        local tw, th = 400, 20
+        if cy + ch/2 > ty - th/2 then
+          print('below')
+          contact:setEnabled(false)
+        end
+        else
+          contact:setEnabled(true)
+          --print('above')
+        end
       end
   end)
 
