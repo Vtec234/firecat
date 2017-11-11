@@ -19,25 +19,59 @@ cat = {
   jumpMaxSpeed = 9.5, -- our speed limit while jumping
 
   -- Here are some incidental storage areas
-  img = love.graphics.newImage('assets/cat.png') -- store the sprite we'll be drawing
+  img = love.graphics.newImage('assets/cat.png'), -- store the sprite we'll be drawing
+  body = nil
 }
 
 -- Loading
 function love.load(arg)
   world = wf.newWorld(0, 0, true)
-  world:newRectangleCollider(200, 300, 20, 20)
+  world:setGravity(0, 500)
+
+  -- Setup collision logic
+  world:addCollisionClass('Wall')
+  world:addCollisionClass('Platform')
+  world:addCollisionClass('DynObject')
+  world:addCollisionClass('Cat')
+
+  tbl = world:newRectangleCollider(200, 500, 400, 20)
+  tbl:setType('static')
+  tbl:setCollisionClass('Platform')
+
+  cat.body = world:newRectangleCollider(390, 450, 20, 60)
+  cat.body:setType('dynamic')
+  cat.body:setCollisionClass('Cat')
+
+  cat.body:setPreSolve(function(col1, col2, contact)
+      if col1.collision_class == 'Cat' and col2.collision_class == 'Platform' then
+        local cx, cy = col1:getPosition()
+        local cw, ch = 400, 200
+        local tx, ty = col2:getPosition()
+        local tw, th = 20, 60
+        if cy + ch/2 > ty - th/2 then contact:setEnabled(false) end
+      end
+  end)
+end
+
+-- Handle keys
+function handle_keys()
+  if love.keyboard.isDown('up') then
+    cat.body:applyLinearImpulse(0, -1000)
+  end
 end
 
 -- Updating
 function love.update(dt)
+  handle_keys()
+
   world:update(dt)
 
-	cat.x = cat.x + cat.xVelocity
-  	cat.y = cat.y + cat.yVelocity
+  x, y = cat.body:getPosition()
+  cat.body:setPosition(x + cat.xVelocity, y)
 
-  	-- Apply Friction
-  	cat.xVelocity = cat.xVelocity * (1 - math.min(dt * cat.friction, 1))
-  	cat.yVelocity = cat.yVelocity * (1 - math.min(dt * cat.friction, 1))
+  -- Apply Friction
+  cat.xVelocity = cat.xVelocity * (1 - math.min(dt * cat.friction, 1))
+  cat.yVelocity = cat.yVelocity * (1 - math.min(dt * cat.friction, 1))
 
 	if love.keyboard.isDown("left", "a") and cat.xVelocity > -cat.maxSpeed then
 		cat.xVelocity = cat.xVelocity - cat.acc * dt
