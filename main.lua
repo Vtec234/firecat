@@ -10,6 +10,7 @@ cat = {
   yVelocity = 0,
   acc = 100, -- the acceleration of our cat
   friction = 20, -- slow our cat down - we could toggle this situationally to create icy or slick platforms
+  maxSpeed = 500,
 
   -- These are values applying specifically to jumping
   isJumping = false, -- are we in the process of jumping?
@@ -38,8 +39,9 @@ function love.load(arg)
   tbl:setType('static')
   tbl:setCollisionClass('Platform')
 
-  cat.body = world:newRectangleCollider(390, 450, 20, 60)
+  cat.body = world:newRectangleCollider(cat.x, cat.y, 20, 40)
   cat.body:setType('dynamic')
+	cat.body:setRestitution(0.0)
   cat.body:setCollisionClass('Cat')
 
   cat.body:setPreSolve(function(col1, col2, contact)
@@ -51,32 +53,26 @@ function love.load(arg)
         if cy + ch/2 > ty - th/2 then contact:setEnabled(false) end
       end
   end)
-end
 
--- Handle keys
-function handle_keys()
-  if love.keyboard.isDown('up') then
-    cat.body:applyLinearImpulse(0, -1000)
-  end
+  ground = world:newRectangleCollider(0, love.graphics.getHeight() - 20, love.graphics.getWidth(), 20)
+  ground:setType('static')
 end
 
 -- Updating
 function love.update(dt)
-  handle_keys()
-
   world:update(dt)
 
-  x, y = cat.body:getPosition()
-  cat.body:setPosition(x + cat.xVelocity, y)
+	x, y = cat.body:getPosition()
+	cat.body:setPosition(x + cat.xVelocity, y)
 
   -- Apply Friction
   cat.xVelocity = cat.xVelocity * (1 - math.min(dt * cat.friction, 1))
   cat.yVelocity = cat.yVelocity * (1 - math.min(dt * cat.friction, 1))
 
-	if love.keyboard.isDown("left", "a") and cat.xVelocity > -cat.maxSpeed then
-		cat.xVelocity = cat.xVelocity - cat.acc * dt
-	elseif love.keyboard.isDown("right", "d") and cat.xVelocity < cat.maxSpeed then
-		cat.xVelocity = cat.xVelocity + cat.acc * dt
+  	if love.keyboard.isDown("left") then
+  		keydown("left", dt)
+	elseif love.keyboard.isDown("right") then
+		keydown("right", dt)
 	end
 end
 
@@ -84,4 +80,19 @@ end
 function love.draw()
   world:draw()
 	love.graphics.draw(cat.img, cat.x, cat.y)
+end
+
+-- Keys pressed
+function love.keypressed(key)
+	if key == "up" then
+	    cat.body:applyLinearImpulse(0, -500)
+	end
+end
+
+function keydown(key, dt)
+  	if key == "left" and cat.xVelocity > -cat.maxSpeed then
+		cat.xVelocity = cat.xVelocity - cat.acc * dt
+	elseif key == "right" and cat.xVelocity < cat.maxSpeed then
+		cat.xVelocity = cat.xVelocity + cat.acc * dt
+	end
 end
