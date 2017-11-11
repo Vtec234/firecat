@@ -27,10 +27,11 @@ cat = {
 -- Loading
 function love.load(arg)
 	world = wf.newWorld(0, 0, true)
-	world:setGravity(0, 512)
+	world:setGravity(0, 750)
 	world:addCollisionClass('Player')
 
   -- Setup collision logic
+  world:addCollisionClass('Ground')
   world:addCollisionClass('Wall')
   world:addCollisionClass('Platform')
   world:addCollisionClass('DynObject')
@@ -56,12 +57,18 @@ function love.load(arg)
   end)
 
   ground = world:newRectangleCollider(0, love.graphics.getHeight() - 20, love.graphics.getWidth(), 20)
+  ground:setCollisionClass('Ground')
   ground:setType('static')
 end
 
 -- Updating
 function love.update(dt)
   world:update(dt)
+
+ 	if cat.body:enter("Ground") then
+ 		cat.isJumping = false
+ 		cat.isDoubleJumping = false
+ 	end
 
 	x, y = cat.body:getPosition()
 	cat.body:setPosition(x + cat.xVelocity, y)
@@ -79,14 +86,23 @@ end
 
 -- Drawing
 function love.draw()
-  world:draw()
+  	world:draw()
+
 	love.graphics.draw(cat.img, cat.x, cat.y)
 end
 
 -- Keys pressed
 function love.keypressed(key)
 	if key == "up" then
-	    cat.body:applyLinearImpulse(0, -500)
+		if cat.isJumping == true then
+			if cat.isDoubleJumping == false then
+				cat.body:applyLinearImpulse(0, -500)
+				cat.isDoubleJumping = true
+			end
+		else
+			cat.body:applyLinearImpulse(0, -500)
+			cat.isJumping = true
+		end
 	end
 end
 
