@@ -94,15 +94,9 @@ end
 -- Keys pressed
 function love.keypressed(key)
 	if key == "up" then
-		if cat.isJumping == true then
-			if cat.isDoubleJumping == false then
-				cat.body:applyLinearImpulse(0, -500)
-				cat.isDoubleJumping = true
-			end
-		else
-			cat.body:applyLinearImpulse(0, -500)
-			cat.isJumping = true
-		end
+		jump()
+	elseif key == "space" then
+		catchitem()
 	end
 end
 
@@ -112,4 +106,20 @@ function keydown(key, dt)
 	elseif key == "right" and cat.xVelocity < cat.maxSpeed then
 		cat.xVelocity = cat.xVelocity + cat.acc * dt
 	end
+end
+
+function jump()
+	if cat.isJumping == true then
+		if cat.isDoubleJumping == false then
+			cat.body:applyLinearImpulse(0, -500)
+			cat.isDoubleJumping = true
+		end
+	else
+		cat.body:applyLinearImpulse(0, -500)
+		cat.isJumping = true
+	end
+end
+
+function catchitem()
+	
 end
