@@ -14,6 +14,7 @@ cat = {
 
 	-- These are values applying specifically to jumping
 	isJumping = false, -- are we in the process of jumping?
+	isDoubleJumping = false,
 	isGrounded = false, -- are we on the ground?
 	hasReachedMax = false, -- is this as high as we can go?
 
