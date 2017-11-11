@@ -24,11 +24,14 @@ cat = {
 
 -- Loading
 function love.load(arg)
-
+  world = wf.newWorld(0, 0, true)
+  world:newRectangleCollider(200, 300, 20, 20)
 end
 
 -- Updating
 function love.update(dt)
+  world:update(dt)
+
 	cat.x = cat.x + cat.xVelocity
   	cat.y = cat.y + cat.yVelocity
 
@@ -44,6 +47,7 @@ function love.update(dt)
 end
 
 -- Drawing
-function love.draw(dt)
+function love.draw()
+  world:draw()
 	love.graphics.draw(cat.img, cat.x, cat.y)
 end
