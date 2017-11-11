@@ -65,7 +65,7 @@ end
 function love.update(dt)
   world:update(dt)
 
- 	if cat.body:enter("Ground") then
+ 	if cat.body:enter("Ground") or cat.body:enter("Platform") then
  		cat.isJumping = false
  		cat.isDoubleJumping = false
  	end
