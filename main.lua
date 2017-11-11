@@ -13,7 +13,8 @@ cat = {
   friction = 20, -- slow our cat down - we could toggle this situationally to create icy or slick platforms
   maxSpeed = 500,
 
-  -- These are values applying specifically to jumping
+  hasCoughtItem = false,
+  isDoubleJumping = false,
   isJumping = false, -- are we in the process of jumping?
   isGrounded = false, -- are we on the ground?
   hasReachedMax = false, -- is this as high as we can go?
@@ -138,5 +139,9 @@ function jump()
 end
 
 function catchitem()
-	
+	if cat.hasCoughtItem == false then
+
+
+		cat.hasCoughtItem = true
+	end
 end
