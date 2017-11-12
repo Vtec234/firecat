@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=1]
+[gd_scene load_steps=49 format=1]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://meter/meter_left.png" type="Texture" id=2]
@@ -9,55 +9,31 @@
 [ext_resource path="res://kitchen/assets/curtain_rail.png" type="Texture" id=7]
 [ext_resource path="res://lab/lab_scene.png" type="Texture" id=8]
 [ext_resource path="res://cat.gd" type="Script" id=9]
-[ext_resource path="res://cat_swipe/pixil-frame-0.png" type="Texture" id=10]
-[ext_resource path="res://cat_swipe/pixil-frame-1.png" type="Texture" id=11]
-[ext_resource path="res://cat_swipe/pixil-frame-2.png" type="Texture" id=12]
-[ext_resource path="res://cat_swipe/pixil-frame-3.png" type="Texture" id=13]
-[ext_resource path="res://cat_walking_animation/cat_walk_right_0.png" type="Texture" id=14]
-[ext_resource path="res://cat_walking_animation/cat_walk_right_1.png" type="Texture" id=15]
-[ext_resource path="res://cat_walking_animation/cat_walk_right_2.png" type="Texture" id=16]
-[ext_resource path="res://cat_walking_animation/cat_walk_right_3.png" type="Texture" id=17]
-[ext_resource path="res://cat_walking_animation/cat_walk_right_4.png" type="Texture" id=18]
-[ext_resource path="res://cat_still_animation/pixil-frame-0.png" type="Texture" id=19]
-[ext_resource path="res://cat_still_animation/pixil-frame-1.png" type="Texture" id=20]
-[ext_resource path="res://cat_still_animation/pixil-frame-2.png" type="Texture" id=21]
-[ext_resource path="res://cat_still_animation/pixil-frame-3.png" type="Texture" id=22]
-[ext_resource path="res://cat_still_animation/pixil-frame-4.png" type="Texture" id=23]
-[ext_resource path="res://cat_still_animation/pixil-frame-5.png" type="Texture" id=24]
-[ext_resource path="res://cat_still_animation/pixil-frame-6.png" type="Texture" id=25]
-[ext_resource path="res://cat_still_animation/pixil-frame-7.png" type="Texture" id=26]
-[ext_resource path="res://cat_still_animation/pixil-frame-8.png" type="Texture" id=27]
-[ext_resource path="res://cat_still_animation/pixil-frame-9.png" type="Texture" id=28]
-[ext_resource path="res://cat_still_animation/pixil-frame-10.png" type="Texture" id=29]
-[ext_resource path="res://cat_still_animation/pixil-frame-11.png" type="Texture" id=30]
-[ext_resource path="res://cat_still_animation/pixil-frame-12.png" type="Texture" id=31]
-[ext_resource path="res://cat_still_animation/pixil-frame-13.png" type="Texture" id=32]
-[ext_resource path="res://cat_still_animation/pixil-frame-14.png" type="Texture" id=33]
-[ext_resource path="res://cat_still_animation/pixil-frame-15.png" type="Texture" id=34]
-[ext_resource path="res://flame/flame_0.png" type="Texture" id=35]
-[ext_resource path="res://flame/flame_1.png" type="Texture" id=36]
-[ext_resource path="res://flame/flame_2.png" type="Texture" id=37]
-[ext_resource path="res://flame/flame_3.png" type="Texture" id=38]
-[ext_resource path="res://fire.png" type="Texture" id=39]
-[ext_resource path="res://Flammable.gd" type="Script" id=40]
-[ext_resource path="res://Smashable.gd" type="Script" id=41]
-[ext_resource path="res://kitchen/assets/cereal.png" type="Texture" id=42]
-[ext_resource path="res://kitchen/assets/toaster.png" type="Texture" id=43]
-[ext_resource path="res://kitchen/assets/curtains.png" type="Texture" id=44]
-[ext_resource path="res://Interactable.gd" type="Script" id=45]
-[ext_resource path="res://kitchen/assets/cupboard_right_closed.png" type="Texture" id=46]
-[ext_resource path="res://kitchen/assets/cupboard_right_open.png" type="Texture" id=47]
-[ext_resource path="res://kitchen/assets/vodka.png" type="Texture" id=48]
-[ext_resource path="res://kitchen/assets/cooker.png" type="Texture" id=49]
-[ext_resource path="res://kitchen/assets/fridge_closed.png" type="Texture" id=50]
-[ext_resource path="res://kitchen/assets/fridge_opened.png" type="Texture" id=51]
-[ext_resource path="res://kitchen/assets/banana.png" type="Texture" id=52]
-[ext_resource path="res://kitchen/assets/paper_towel.png" type="Texture" id=53]
-[ext_resource path="res://living_room/assets/cushion.png" type="Texture" id=54]
-[ext_resource path="res://living_room/assets/starry_night.png" type="Texture" id=55]
-[ext_resource path="res://living_room/assets/plant.png" type="Texture" id=56]
-[ext_resource path="res://lab/assets/gas_tank.png" type="Texture" id=57]
-[ext_resource path="res://lab/assets/beaker_filled_1.png" type="Texture" id=58]
+[ext_resource path="res://AnimatedSprite.tscn" type="PackedScene" id=10]
+[ext_resource path="res://flame/flame_0.png" type="Texture" id=11]
+[ext_resource path="res://flame/flame_1.png" type="Texture" id=12]
+[ext_resource path="res://flame/flame_2.png" type="Texture" id=13]
+[ext_resource path="res://flame/flame_3.png" type="Texture" id=14]
+[ext_resource path="res://fire.png" type="Texture" id=15]
+[ext_resource path="res://Flammable.gd" type="Script" id=16]
+[ext_resource path="res://Smashable.gd" type="Script" id=17]
+[ext_resource path="res://kitchen/assets/cereal.png" type="Texture" id=18]
+[ext_resource path="res://kitchen/assets/toaster.png" type="Texture" id=19]
+[ext_resource path="res://kitchen/assets/curtains.png" type="Texture" id=20]
+[ext_resource path="res://Interactable.gd" type="Script" id=21]
+[ext_resource path="res://kitchen/assets/cupboard_right_closed.png" type="Texture" id=22]
+[ext_resource path="res://kitchen/assets/cupboard_right_open.png" type="Texture" id=23]
+[ext_resource path="res://kitchen/assets/vodka.png" type="Texture" id=24]
+[ext_resource path="res://kitchen/assets/cooker.png" type="Texture" id=25]
+[ext_resource path="res://kitchen/assets/fridge_closed.png" type="Texture" id=26]
+[ext_resource path="res://kitchen/assets/fridge_opened.png" type="Texture" id=27]
+[ext_resource path="res://kitchen/assets/banana.png" type="Texture" id=28]
+[ext_resource path="res://kitchen/assets/paper_towel.png" type="Texture" id=29]
+[ext_resource path="res://living_room/assets/cushion.png" type="Texture" id=30]
+[ext_resource path="res://living_room/assets/starry_night.png" type="Texture" id=31]
+[ext_resource path="res://living_room/assets/plant.png" type="Texture" id=32]
+[ext_resource path="res://lab/assets/gas_tank.png" type="Texture" id=33]
+[ext_resource path="res://lab/assets/beaker_filled_1.png" type="Texture" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -77,47 +53,28 @@ extents = Vector2( 10, 10 )
 [sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "swipe",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "walking",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "still",
-"speed": 10.0
-} ]
-
-[sub_resource type="SpriteFrames" id=5]
-
-animations = [ {
-"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.94012, 10 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 19.8525, 9.58144 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 47.2012, 32.8768 )
 
-[sub_resource type="ImageTexture" id=9]
+[sub_resource type="ImageTexture" id=8]
 
 flags = 0
 image = Image( 32, 32, 0, RGBA, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 169, 244, 255, 3, 169, 244, 255, 3, 169, 244, 255, 3, 169, 244, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 169, 244, 255, 3, 169, 244, 255, 3, 169, 244, 255, 3, 169, 244, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 212, 193, 45, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 212, 193, 45, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 212, 193, 45, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 212, 193, 45, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 212, 193, 45, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 212, 193, 45, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 255, 235, 59, 255, 212, 193, 45, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 255, 235, 59, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 176, 176, 176, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
@@ -125,32 +82,32 @@ size = Vector2( 32, 32 )
 storage = 0
 lossy_quality = 0.7
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 35.315, 45.9089 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
 extents = Vector2( 5.94577, 10 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=12]
 
 custom_solver_bias = 0.0
 extents = Vector2( 24.905, 30.4265 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=13]
 
 custom_solver_bias = 0.0
 extents = Vector2( 44.6318, 24.8873 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=14]
 
 custom_solver_bias = 0.0
 extents = Vector2( 44.2615, 152.835 )
@@ -416,7 +373,6 @@ _update_shape_index = 7
 
 [node name="Cat" type="KinematicBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 548.098, 292.566 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -427,16 +383,9 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 9 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cat"]
+[node name="AnimatedSprite" parent="Cat" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 0.500491, 8.57828 )
-transform/scale = Vector2( 5, 5 )
-z/z = 1
-frames = SubResource( 4 )
-animation = "still"
-frame = 2
-playing = true
-flip_h = true
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
 
@@ -452,9 +401,9 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 1993.43, 251.815 )
 transform/scale = Vector2( 5.61963, 4.63778 )
-frames = SubResource( 5 )
+frames = SubResource( 4 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
 
 [node name="FireAnim2" type="Particles2D" parent="Prefabs"]
@@ -464,7 +413,7 @@ transform/scale = Vector2( 1.64281, 1.40712 )
 config/amount = 8
 config/lifetime = 0.5
 config/process_mode = 1
-config/texture = ExtResource( 39 )
+config/texture = ExtResource( 15 )
 params/direction = 180.0
 params/spread = 30.0
 params/linear_velocity = 100.0
@@ -489,7 +438,7 @@ transform/scale = Vector2( 1.64281, 1.40712 )
 config/amount = 8
 config/lifetime = 0.5
 config/process_mode = 1
-config/texture = ExtResource( 35 )
+config/texture = ExtResource( 11 )
 params/direction = 180.0
 params/spread = 30.0
 params/linear_velocity = 100.0
@@ -510,7 +459,7 @@ params/anim_initial_pos = 0.0
 [node name="Flammable" type="Sprite" parent="Prefabs"]
 
 transform/pos = Vector2( 2223.9, 489.643 )
-script/script = ExtResource( 40 )
+script/script = ExtResource( 16 )
 
 [node name="CounterTop" type="StaticBody2D" parent="." groups=[
 "platform",
@@ -519,7 +468,7 @@ script/script = ExtResource( 40 )
 editor/display_folded = true
 transform/pos = Vector2( 661.84, 427.442 )
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 35.6077, 0, 0, 0.72728, -13.0181, 7.00713 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -534,7 +483,7 @@ bounce = 0.0
 
 transform/pos = Vector2( -13.0181, 7.00713 )
 transform/scale = Vector2( 35.6077, 0.72728 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 
@@ -546,7 +495,7 @@ editor/display_folded = true
 transform/pos = Vector2( 340.822, 396.824 )
 transform/scale = Vector2( 0.999999, 0.931048 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -566,7 +515,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -580,12 +529,12 @@ combustible = false
 
 transform/pos = Vector2( 0, -1.5028 )
 transform/scale = Vector2( 1.9, 1.99392 )
-texture = ExtResource( 42 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cereal1"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -593,7 +542,7 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 925.111, 387.182 )
 input/pickable = false
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 17.1046, 5.70154 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -613,7 +562,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = "res://debris/debris_3.png"
 empty_sprite = "res://kitchen/assets/toaster.png"
@@ -623,18 +572,18 @@ combustible = false
 [node name="Flammable1" type="Sprite" parent="Kitchen/Toaster"]
 
 transform/pos = Vector2( 986.609, 127.636 )
-script/script = ExtResource( 40 )
+script/script = ExtResource( 16 )
 
 [node name="Sprite" type="Sprite" parent="Kitchen/Toaster"]
 
 transform/pos = Vector2( 17.0278, -10.8544 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 43 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Toaster"]
 
 transform/pos = Vector2( 17.1046, 5.70154 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 trigger = false
 _update_shape_index = 0
 
@@ -643,14 +592,14 @@ _update_shape_index = 0
 transform/pos = Vector2( 1195.82, 248.786 )
 transform/scale = Vector2( 3.16028, 3.14147 )
 z/z = -1
-texture = ExtResource( 44 )
-script/script = ExtResource( 45 )
+texture = ExtResource( 20 )
+script/script = ExtResource( 21 )
 
 [node name="CurtainsBody" type="RigidBody2D" parent="Kitchen/Curtains"]
 
 transform/scale = Vector2( 0.316428, 0.318322 )
 input/pickable = false
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 2.25805, -0.576101, 0.532112, 2.08563, 5.60106, 31.4606 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -670,7 +619,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = "res://debris/debris_7.png"
 empty_sprite = "res://kitchen/assets/curtains.png"
@@ -682,14 +631,14 @@ combustible = false
 transform/pos = Vector2( 9.4539, 37.0008 )
 transform/rot = 16.1977
 transform/scale = Vector2( 2.58755, 1.50501 )
-texture = ExtResource( 44 )
+texture = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Curtains/CurtainsBody"]
 
 transform/pos = Vector2( 5.60106, 31.4606 )
 transform/rot = 14.3127
 transform/scale = Vector2( 2.33038, 2.15244 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 trigger = false
 _update_shape_index = 0
 
@@ -699,20 +648,20 @@ editor/display_folded = true
 transform/pos = Vector2( 885.552, 559.691 )
 transform/scale = Vector2( 3, 3 )
 z/z = -1
-texture = ExtResource( 46 )
-script/script = ExtResource( 45 )
+texture = ExtResource( 22 )
+script/script = ExtResource( 21 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Kitchen/Cupboard"]
 
 z/z = -1
-texture = ExtResource( 47 )
+texture = ExtResource( 23 )
 
 [node name="OilBottle" type="RigidBody2D" parent="Kitchen/Cupboard"]
 
 transform/pos = Vector2( -14.1144, -12.5505 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -732,7 +681,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -745,12 +694,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Cupboard/OilBottle"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = SubResource( 9 )
+texture = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cupboard/OilBottle"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -760,7 +709,7 @@ editor/display_folded = true
 transform/pos = Vector2( 9.90704, -12.4082 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -780,7 +729,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -793,12 +742,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Cupboard/OilBottle1"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = SubResource( 9 )
+texture = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cupboard/OilBottle1"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -808,21 +757,21 @@ editor/display_folded = true
 transform/pos = Vector2( 884.552, 99.9309 )
 transform/scale = Vector2( 3, 2.79315 )
 z/z = -1
-texture = ExtResource( 46 )
-script/script = ExtResource( 45 )
+texture = ExtResource( 22 )
+script/script = ExtResource( 21 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Kitchen/Cupboard3"]
 
 transform/pos = Vector2( -1, 0.358021 )
 z/z = -1
-texture = ExtResource( 47 )
+texture = ExtResource( 23 )
 
 [node name="Cereal" type="RigidBody2D" parent="Kitchen/Cupboard3"]
 
 transform/pos = Vector2( -8.75961, 19.8135 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -842,7 +791,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -856,12 +805,12 @@ combustible = false
 
 transform/pos = Vector2( 0, -1.5028 )
 transform/scale = Vector2( 1.9, 1.99392 )
-texture = ExtResource( 42 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cupboard3/Cereal"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -871,14 +820,14 @@ editor/display_folded = true
 transform/pos = Vector2( 600, 559.691 )
 transform/scale = Vector2( 3, 3 )
 z/z = -1
-texture = ExtResource( 46 )
+texture = ExtResource( 22 )
 flip_h = true
-script/script = ExtResource( 45 )
+script/script = ExtResource( 21 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Kitchen/Cupboard1"]
 
 z/z = -1
-texture = ExtResource( 47 )
+texture = ExtResource( 23 )
 flip_h = true
 
 [node name="OilBottle" type="RigidBody2D" parent="Kitchen/Cupboard1"]
@@ -887,7 +836,7 @@ editor/display_folded = true
 transform/pos = Vector2( -10.7811, -12.5505 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -907,7 +856,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -920,12 +869,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Cupboard1/OilBottle"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = SubResource( 9 )
+texture = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cupboard1/OilBottle"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -934,7 +883,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 9.90704, -12.4082 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -954,7 +903,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -967,12 +916,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Cupboard1/OilBottle1"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = SubResource( 9 )
+texture = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cupboard1/OilBottle1"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -981,14 +930,14 @@ _update_shape_index = 0
 transform/pos = Vector2( 593, 98.9309 )
 transform/scale = Vector2( 3, 2.80685 )
 z/z = -1
-texture = ExtResource( 46 )
+texture = ExtResource( 22 )
 flip_h = true
-script/script = ExtResource( 45 )
+script/script = ExtResource( 21 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Kitchen/Cupboard2"]
 
 z/z = -1
-texture = ExtResource( 47 )
+texture = ExtResource( 23 )
 flip_h = true
 
 [node name="Vodka" type="RigidBody2D" parent="Kitchen/Cupboard2"]
@@ -997,7 +946,7 @@ editor/display_folded = true
 transform/pos = Vector2( -10.7811, -14.2593 )
 transform/scale = Vector2( 0.333333, 0.386735 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1017,7 +966,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1030,12 +979,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Cupboard2/Vodka"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = ExtResource( 48 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cupboard2/Vodka"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -1044,7 +993,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 10.2404, -14.1882 )
 transform/scale = Vector2( 0.333333, 0.388958 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1064,7 +1013,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1077,12 +1026,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Cupboard2/Vodka 2"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = ExtResource( 48 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cupboard2/Vodka 2"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -1092,19 +1041,19 @@ editor/display_folded = true
 transform/pos = Vector2( 1191.72, 524.054 )
 transform/scale = Vector2( 3.49047, 2.84513 )
 z/z = -1
-texture = ExtResource( 49 )
-script/script = ExtResource( 45 )
+texture = ExtResource( 25 )
+script/script = ExtResource( 21 )
 
 [node name="stovetop" type="Node2D" parent="Kitchen/cooker"]
 
 transform/pos = Vector2( -17.5449, -42.3979 )
 transform/scale = Vector2( 0.0383344, 0.057701 )
-script/script = ExtResource( 40 )
+script/script = ExtResource( 16 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Kitchen/cooker"]
 
 z/z = -1
-texture = ExtResource( 49 )
+texture = ExtResource( 25 )
 
 [node name="Fridge" type="Sprite" parent="Kitchen"]
 
@@ -1112,20 +1061,20 @@ editor/display_folded = true
 transform/pos = Vector2( 162.103, 446.739 )
 transform/scale = Vector2( 6.60662, 5.80284 )
 z/z = -1
-texture = ExtResource( 50 )
-script/script = ExtResource( 45 )
+texture = ExtResource( 26 )
+script/script = ExtResource( 21 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Kitchen/Fridge"]
 
 z/z = -1
-texture = ExtResource( 51 )
+texture = ExtResource( 27 )
 
 [node name="Banana" type="RigidBody2D" parent="Kitchen/Fridge"]
 
 transform/pos = Vector2( -6.15026, -25.1491 )
 transform/scale = Vector2( 0.151363, 0.173562 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1145,7 +1094,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1158,12 +1107,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Fridge/Banana"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = ExtResource( 52 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Fridge/Banana"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -1172,7 +1121,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 3.78518, -9.80745 )
 transform/scale = Vector2( 0.151363, 0.173562 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1192,7 +1141,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1205,12 +1154,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="Kitchen/Fridge/Banana1"]
 
 transform/scale = Vector2( 1.9, 1.9 )
-texture = ExtResource( 52 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Fridge/Banana1"]
 
 transform/scale = Vector2( 1.35433, 3.19482 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
@@ -1219,7 +1168,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 810.814, 388.819 )
 input/pickable = false
-shapes/0/shape = SubResource( 10 )
+shapes/0/shape = SubResource( 9 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 16.2902, -8.14508 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1239,7 +1188,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 100
 on_break_sprite = "res://debris/debris_1.png"
 empty_sprite = ""
@@ -1250,12 +1199,12 @@ combustible = false
 
 transform/pos = Vector2( 17.0278, -10.8544 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 53 )
+texture = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/PaperTowel"]
 
 transform/pos = Vector2( 16.2902, -8.14508 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 trigger = false
 _update_shape_index = 0
 
@@ -1266,7 +1215,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( -892.259, 559.222 )
 input/pickable = false
-shapes/0/shape = SubResource( 11 )
+shapes/0/shape = SubResource( 10 )
 shapes/0/transform = Matrix32( 36.4768, 0, 0, 1.27187, -161.35, 14.0868 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1281,7 +1230,7 @@ bounce = 0.0
 
 transform/pos = Vector2( -161.35, 14.0868 )
 transform/scale = Vector2( 36.4768, 1.27187 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 trigger = false
 _update_shape_index = 0
 
@@ -1292,7 +1241,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( -1562.26, 501.222 )
 input/pickable = false
-shapes/0/shape = SubResource( 11 )
+shapes/0/shape = SubResource( 10 )
 shapes/0/transform = Matrix32( 31.9384, 0, 0, 0.825297, -11.1235, 0.0531921 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1307,7 +1256,7 @@ bounce = 0.0
 
 transform/pos = Vector2( -11.1235, 0.0531921 )
 transform/scale = Vector2( 31.9384, 0.825297 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 trigger = false
 _update_shape_index = 0
 
@@ -1318,7 +1267,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( -1562.26, 501.222 )
 input/pickable = false
-shapes/0/shape = SubResource( 12 )
+shapes/0/shape = SubResource( 11 )
 shapes/0/transform = Matrix32( 12.8003, 0, 0, 0.825297, -1668.3, 739.122 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1333,7 +1282,7 @@ bounce = 0.0
 
 transform/pos = Vector2( -1668.3, 739.122 )
 transform/scale = Vector2( 12.8003, 0.825297 )
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 trigger = false
 _update_shape_index = 0
 
@@ -1346,7 +1295,7 @@ editor/display_folded = true
 editor/display_folded = true
 transform/pos = Vector2( -901.301, 528.498 )
 input/pickable = false
-shapes/0/shape = SubResource( 13 )
+shapes/0/shape = SubResource( 12 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 17.7034, -10.4644 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1366,7 +1315,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://living_room/assets/cushion.png"
@@ -1377,12 +1326,12 @@ combustible = false
 
 transform/pos = Vector2( 17.0278, -10.8544 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 54 )
+texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoom/Cushion1"]
 
 transform/pos = Vector2( 17.7034, -10.4644 )
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 trigger = false
 _update_shape_index = 0
 
@@ -1391,7 +1340,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( -1233.49, 531.573 )
 input/pickable = false
-shapes/0/shape = SubResource( 13 )
+shapes/0/shape = SubResource( 12 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 17.7034, -10.4644 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1411,7 +1360,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://living_room/assets/cushion.png"
@@ -1422,12 +1371,12 @@ combustible = false
 
 transform/pos = Vector2( 17.0278, -10.8544 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 54 )
+texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoom/Cushion2"]
 
 transform/pos = Vector2( 17.7034, -10.4644 )
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 trigger = false
 _update_shape_index = 0
 
@@ -1436,14 +1385,14 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( -1571.42, 260.452 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 55 )
-script/script = ExtResource( 45 )
+texture = ExtResource( 31 )
+script/script = ExtResource( 21 )
 
 [node name="PaintingBody" type="RigidBody2D" parent="LivingRoom/Painting"]
 
 visibility/visible = false
 input/pickable = false
-shapes/0/shape = SubResource( 14 )
+shapes/0/shape = SubResource( 13 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.14154, -0.878433 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1463,7 +1412,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://living_room/assets/starry_night.png"
@@ -1473,12 +1422,12 @@ combustible = false
 [node name="Sprite" type="Sprite" parent="LivingRoom/Painting/PaintingBody"]
 
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 55 )
+texture = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoom/Painting/PaintingBody"]
 
 transform/pos = Vector2( 1.14154, -0.878433 )
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 trigger = false
 _update_shape_index = 0
 
@@ -1487,7 +1436,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( -630.18, 557.771 )
 input/pickable = false
-shapes/0/shape = SubResource( 15 )
+shapes/0/shape = SubResource( 14 )
 shapes/0/transform = Matrix32( 1.03923, 0, 0, 1, 22.6169, -45.8634 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1507,7 +1456,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://living_room/assets/plant.png"
@@ -1518,13 +1467,13 @@ combustible = false
 
 transform/pos = Vector2( 17.0278, -56.2808 )
 transform/scale = Vector2( 5, 5 )
-texture = ExtResource( 56 )
+texture = ExtResource( 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoom/Plant"]
 
 transform/pos = Vector2( 22.6169, -45.8634 )
 transform/scale = Vector2( 1.03923, 1 )
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 trigger = false
 _update_shape_index = 0
 
@@ -1535,7 +1484,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( -2755.25, 1259.8 )
 input/pickable = false
-shapes/0/shape = SubResource( 15 )
+shapes/0/shape = SubResource( 14 )
 shapes/0/transform = Matrix32( 1.03923, 0, 0, 1, 22.6169, -45.8634 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1555,7 +1504,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://living_room/assets/plant.png"
@@ -1566,13 +1515,13 @@ combustible = false
 
 transform/pos = Vector2( 17.0278, -56.2808 )
 transform/scale = Vector2( 5, 5 )
-texture = ExtResource( 56 )
+texture = ExtResource( 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lab/Plant1"]
 
 transform/pos = Vector2( 22.6169, -45.8634 )
 transform/scale = Vector2( 1.03923, 1 )
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 trigger = false
 _update_shape_index = 0
 
@@ -1581,7 +1530,7 @@ _update_shape_index = 0
 transform/pos = Vector2( -3705.09, 1295.67 )
 transform/scale = Vector2( 0.8, 0.8 )
 input/pickable = false
-shapes/0/shape = SubResource( 15 )
+shapes/0/shape = SubResource( 14 )
 shapes/0/transform = Matrix32( 1.03923, 0, 0, 1, 22.6169, -45.8634 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1601,7 +1550,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://lab/assets/gas_tank.png"
@@ -1612,13 +1561,13 @@ combustible = true
 
 transform/pos = Vector2( 17.0278, -56.2808 )
 transform/scale = Vector2( 5, 5 )
-texture = ExtResource( 57 )
+texture = ExtResource( 33 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lab/Tank"]
 
 transform/pos = Vector2( 22.6169, -45.8634 )
 transform/scale = Vector2( 1.03923, 1 )
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 trigger = false
 _update_shape_index = 0
 
@@ -1626,7 +1575,7 @@ _update_shape_index = 0
 
 transform/pos = Vector2( -3339.22, 1193.32 )
 input/pickable = false
-shapes/0/shape = SubResource( 13 )
+shapes/0/shape = SubResource( 12 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 18.4385, 6.44275 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -1646,7 +1595,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 41 )
+script/script = ExtResource( 17 )
 smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://living_room/assets/cushion.png"
@@ -1657,12 +1606,12 @@ combustible = false
 
 transform/pos = Vector2( 17.0278, -10.8544 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 58 )
+texture = ExtResource( 34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lab/Beaker1"]
 
 transform/pos = Vector2( 18.4385, 6.44275 )
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 trigger = false
 _update_shape_index = 0
 

@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://AnimatedSprite.tscn" type="PackedScene" id=2]
+[ext_resource path="res://misc/burn_down_text_1.png" type="Texture" id=3]
+[ext_resource path="res://misc/burn_down_text_2.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Menu" type="Node"]
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 551.0
+margin/top = 506.0
+margin/right = 743.0
+margin/bottom = 577.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "START GAME"
+flat = false
+script/script = ExtResource( 1 )
+
+[node name="AnimatedSprite 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 653.389, 250.566 )
+frame = 11
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 456.0
+margin/top = 364.0
+margin/right = 861.0
+margin/bottom = 388.0
+text = "Owner's gone to work without feeding you..."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = 4
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 656.47, 426.64 )
+transform/scale = Vector2( 0.482597, 0.532467 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+
+
