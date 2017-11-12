@@ -59,7 +59,8 @@ func _fixed_process(delta):
 	if not result.empty():
 		if result.collider.is_in_group("platform"):
 			var plat = result.collider
-			if abs(plat.get_global_pos().y - self.get_global_pos().y) < 95:
+			var dist = abs(plat.get_global_pos().y - self.get_global_pos().y)
+			if dist < 95 and dist > 50:
 				vel.y = min(0, vel.y)
 				
 	var motion = self.move(vel * delta)
@@ -77,20 +78,24 @@ func _fixed_process(delta):
 		time_till_smash = max(0, time_till_smash - delta)
 		
 	if try_smash == true:
+		var interactables = self.get_tree().get_nodes_in_group("interactable")
 		var smashables = self.get_tree().get_nodes_in_group("smashable")
-		var closest = smashables[0]
-		var closest_type = "smashable"
+		var closest = interactables[0]
+		var closest_type = "interactable"
 		var pos = self.get_global_pos()
 		var dist = (closest.get_global_pos() - pos).length()
-		for s in smashables:
-			if (s.get_global_pos() - pos).length() < dist:
-				closest = s
-				dist = (closest.get_global_pos() - pos).length()
-		for i in self.get_tree().get_nodes_in_group("interactable"):
+		
+		for i in interactables:
 			if (i.get_global_pos() - pos).length() < dist:
 				closest = i
 				dist = (closest.get_global_pos() - pos).length()
-				closest_type = "interactable"
+				
+		for s in smashables:
+			if (s.get_global_pos() - pos).length() < dist and not closest.is_a_parent_of(s):
+				closest = s
+				dist = (closest.get_global_pos() - pos).length()
+				closest_type = "smashable"
+				
 		if dist < INTERACTION_DIST:
 			if closest_type == "smashable":
 				closest.set_applied_force(smash_dir * 800000 * delta)
