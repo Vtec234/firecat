@@ -30,6 +30,12 @@ func _input(ev):
 		# Set smash direction towards mouse position
 		smash_dir = (ev.pos + self.get_tree().get_root().get_node("Game").get_node("Camera").get_global_pos() - self.get_global_pos()).normalized()
 		self.update()
+	elif ev.type == InputEvent.JOYSTICK_MOTION:
+		if ev.axis == JOY_AXIS_2: # right_stick left_right
+			smash_dir = (smash_dir + Vector2(ev.value, 0)*0.5).normalized()
+		elif ev.axis == JOY_AXIS_3: # right stick up-down
+			smash_dir = (smash_dir + Vector2(0, ev.value)*0.5).normalized()
+		self.update()
 			
 func _draw():
 	self.draw_line(smash_dir * 70, smash_dir * 110, Color(0xff00ffff), 4)
