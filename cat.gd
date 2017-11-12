@@ -19,6 +19,7 @@ func _ready():
 func _input(ev):
 	if ev.is_action_pressed("jump"):
 		vel = Vector2(0, -JUMP_SPEED)
+		self.get_node("CatSounds").play_jump()
 	elif ev.is_action("move_down"):
 		pass
 	elif ev.is_action("action"):
@@ -86,23 +87,31 @@ func _fixed_process(delta):
 	if try_smash == true:
 		var interactables = self.get_tree().get_nodes_in_group("interactable")
 		var smashables = self.get_tree().get_nodes_in_group("smashable")
-		var closest = interactables[0]
+		var closest = null
+		var dist = 0
 		var closest_type = "interactable"
 		var pos = self.get_global_pos()
-		var dist = (closest.get_global_pos() - pos).length()
 		
-		for i in interactables:
-			if (i.get_global_pos() - pos).length() < dist:
-				closest = i
+		if interactables.size() > 0:
+			closest = interactables[0]
+			dist = (closest.get_global_pos() - pos).length()
+		
+			for i in interactables:
+				if (i.get_global_pos() - pos).length() < dist:
+					closest = i
+					dist = (closest.get_global_pos() - pos).length()
+		if smashables.size() > 0:
+			if closest == null:
+				closest = smashables[0]
 				dist = (closest.get_global_pos() - pos).length()
+			
+			for s in smashables:
+				if (s.get_global_pos() - pos).length() < dist and not closest.is_a_parent_of(s):
+					closest = s
+					dist = (closest.get_global_pos() - pos).length()
+					closest_type = "smashable"
 				
-		for s in smashables:
-			if (s.get_global_pos() - pos).length() < dist and not closest.is_a_parent_of(s):
-				closest = s
-				dist = (closest.get_global_pos() - pos).length()
-				closest_type = "smashable"
-				
-		if dist < INTERACTION_DIST:
+		if dist < INTERACTION_DIST and closest != null:
 			if closest_type == "smashable":
 				closest.set_applied_force(smash_dir * 800000 * delta)
 			else:

@@ -21,7 +21,6 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	self.set_process(true)
-	var sampl = preload("res://sounds/c23_gamejam.wav")
 	
 func _process(dt):
 	# Adjust camera
@@ -32,6 +31,7 @@ func _process(dt):
 	var fires_started = self.get_tree().get_nodes_in_group("on_fire").size()
 	if fires_started != 0 and alarm_on == false:
 		alarm_on = true
+		self.get_node("MusicPlayer").play("c23_gamejam")
 		cam.get_node("MeterFD").set_hidden(false)
 		cam.get_node("MeterBR").set_hidden(false)
 		time_till_dept_arrival = FIRE_DEPT_DELAY
@@ -49,5 +49,7 @@ func _process(dt):
 	
 	# Check win/lose condition
 	time_till_dept_arrival = max(0, time_till_dept_arrival - dt)
-	if alarm_on == true and time_till_dept_arrival == 0:
-		print("Game over! You got " + String(burnage_left) + " points!")
+	if alarm_on == true and burnage_left <= 0:
+			self.get_tree().change_scene("res://Win.tscn")
+	elif alarm_on == true and time_till_dept_arrival == 0 and burnage_left > 0:
+			self.get_tree().change_scene("res://Lost.tscn")
