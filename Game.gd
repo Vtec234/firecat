@@ -6,7 +6,7 @@ var alarm_on = false
 var burnt_meter = 0
 var time_till_dept_arrival = 0
 # Time in seconds from first fire to fire dept. arrival
-const FIRE_DEPT_DELAY = 300
+const FIRE_DEPT_DELAY = 60
 
 onready var cam = self.get_node("Camera")
 onready var cat = self.get_node("Cat")
@@ -31,5 +31,6 @@ func _process(dt):
 	
 	# Check win/lose condition
 	time_till_dept_arrival = max(0, time_till_dept_arrival - dt)
+	#print(time_till_dept_arrival, burnt_meter)
 	if alarm_on == true and time_till_dept_arrival == 0:
 		print("Game over! You got " + String(burnt_meter) + " points!")

@@ -32,8 +32,7 @@ func _input(ev):
 		self.update()
 			
 func _draw():
-	self.draw_line(smash_dir * 70, smash_dir * 110, Color(0xffffff), 4)
-	pass
+	self.draw_line(smash_dir * 70, smash_dir * 110, Color(0xff00ffff), 4)
 	
 func _fixed_process(delta):
 	if Input.is_action_pressed("move_left"):
@@ -55,6 +54,14 @@ func _fixed_process(delta):
 		self.get_children()[0].set_animation("still")
 	vel.y += GRAVITY * delta
 	
+	var space_state = get_world_2d().get_direct_space_state()
+	var result = space_state.intersect_ray(self.get_global_pos(), self.get_global_pos() + Vector2(0, 100), [self])
+	if not result.empty():
+		if result.collider.is_in_group("platform"):
+			var plat = result.collider
+			if abs(plat.get_global_pos().y - self.get_global_pos().y) < 95:
+				vel.y = min(0, vel.y)
+				
 	var motion = self.move(vel * delta)
 	if self.is_colliding():
 		var n = self.get_collision_normal()
@@ -62,11 +69,8 @@ func _fixed_process(delta):
 		vel = n.slide(vel)
 		self.move(motion)
 		
-	var platforms = self.get_tree().get_nodes_in_group("platform")
-	for p in platforms:
-		var space_state = get_world_2d().get_direct_space_state()
-		# use global coordinates, not local to node
-		var result = space_state.intersect_ray(self.get_global_pos(), Vector2(50,100) )
+
+
 	
 		
 	if time_till_smash >= 0.001:

@@ -1,9 +1,10 @@
 extends RigidBody2D
 
-export var smash_threshold = 400
+export var smash_threshold = 200
 export var on_break_sprite = "res://kitchen/assets/oil_1.png"
 export var empty_sprite = "res://kitchen/assets/empty_bottle.png"
 export var spillage_limit = 3 # How many times it can spill before being destroyed
+export var combustible = false
 
 var times_spilled = 0
 const FORCE_DAMPING = 20
@@ -11,6 +12,11 @@ const FORCE_DAMPING = 20
 func _ready():
 	self.add_to_group("smashable")
 	self.set_fixed_process(true)
+	self.set_gravity_scale(5)
+	self.set_bounce(0.07)
+	self.set_layer_mask(2)
+	self.set_max_contacts_reported(1)
+	self.set_contact_monitor(true)
 
 func _fixed_process(delta):
 	self.set_applied_force(self.get_applied_force() * (1 - min(delta * FORCE_DAMPING, 1)))
@@ -22,11 +28,14 @@ func _fixed_process(delta):
 				if self.get_linear_velocity().length() > smash_threshold:
 					var spill_prefab = self.get_tree().get_root().get_node("Game").get_node("Prefabs").get_node("Flammable")
 					var spill = spill_prefab.duplicate()
-					spill.set_texture(load(on_break_sprite))
+					if on_break_sprite != "":
+						spill.set_texture(load(on_break_sprite))
 					spill.set_pos(self.get_global_pos())
+					spill.set_scale(self.get_node("Sprite").get_scale())
 					self.get_tree().get_root().get_node("Game").add_child(spill)
 					times_spilled += 1
-					spill.is_on_fire = true
+					if self.combustible:
+						spill.on_fire_nearby(spill.get_global_pos())
 	elif empty_sprite != "":
 		self.get_node("Sprite").set_texture(load(empty_sprite))
 	else:
