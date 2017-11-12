@@ -22,7 +22,6 @@ func _ready():
 	# Initialization here
 	self.set_process(true)
 	var sampl = preload("res://sounds/c23_gamejam.wav")
-	#StreamPlayer(sampl)
 	
 func _process(dt):
 	# Adjust camera

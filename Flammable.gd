@@ -12,6 +12,7 @@ func on_fire_nearby(pos):
 		self.add_to_group("on_fire")
 		var fire_prefab = self.get_tree().get_root().get_node("Game").get_node("Prefabs").get_node("FireAnim2")
 		var fire = fire_prefab.duplicate()
+		fire.get_node("SamplePlayer2D").play("fire_low")
 		self.add_child(fire)
 		fire.set_pos(Vector2(0, 0))
 

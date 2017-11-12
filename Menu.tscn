@@ -22,10 +22,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 551.0
-margin/top = 506.0
-margin/right = 743.0
-margin/bottom = 577.0
+margin/left = 542.0
+margin/top = 503.0
+margin/right = 734.0
+margin/bottom = 574.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -35,8 +35,8 @@ script/script = ExtResource( 1 )
 
 [node name="AnimatedSprite 2" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 653.389, 250.566 )
-frame = 11
+transform/pos = Vector2( 644.389, 247.566 )
+frame = 4
 
 [node name="Label" type="Label" parent="."]
 
@@ -44,10 +44,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 456.0
-margin/top = 364.0
-margin/right = 861.0
-margin/bottom = 388.0
+margin/left = 447.0
+margin/top = 361.0
+margin/right = 852.0
+margin/bottom = 385.0
 text = "Owner's gone to work without feeding you..."
 align = 1
 percent_visible = 1.0
@@ -56,7 +56,7 @@ max_lines_visible = 4
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
-transform/pos = Vector2( 656.47, 426.64 )
+transform/pos = Vector2( 647.47, 423.64 )
 transform/scale = Vector2( 0.482597, 0.532467 )
 frames = SubResource( 1 )
 animation = "default"
