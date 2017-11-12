@@ -266,6 +266,7 @@ __meta__ = {
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 693.862, 693.456 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -387,7 +388,7 @@ transform/scale = Vector2( 5, 5 )
 z/z = 1
 frames = SubResource( 4 )
 animation = "still"
-frame = 1
+frame = 4
 playing = true
 flip_h = true
 
@@ -409,6 +410,7 @@ transform/pos = Vector2( 1736.64, 298.421 )
 transform/scale = Vector2( 5.61963, 4.63778 )
 frames = SubResource( 5 )
 animation = "default"
+frame = 3
 playing = true
 
 [node name="FireAnim" type="Particles2D" parent="Prefabs"]
@@ -469,8 +471,6 @@ _update_shape_index = 0
 
 [node name="Kitchen" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="Cereal1" type="RigidBody2D" parent="Kitchen"]
 
 editor/display_folded = true
@@ -502,7 +502,7 @@ __meta__ = {
 "_edit_group_": true
 }
 smash_threshold = 200
-on_break_sprite = ""
+on_break_sprite = "res://debris/debris_4.png"
 empty_sprite = ""
 spillage_limit = 3
 combustible = true
@@ -547,7 +547,7 @@ damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 38 )
 smash_threshold = 200
-on_break_sprite = ""
+on_break_sprite = "res://debris/debris_3.png"
 empty_sprite = "res://kitchen/assets/toaster.png"
 spillage_limit = 1
 combustible = false
@@ -599,7 +599,7 @@ damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 38 )
 smash_threshold = 200
-on_break_sprite = ""
+on_break_sprite = "res://debris/debris_7.png"
 empty_sprite = "res://kitchen/assets/curtains.png"
 spillage_limit = 1
 combustible = false
@@ -774,7 +774,7 @@ __meta__ = {
 "_edit_group_": true
 }
 smash_threshold = 200
-on_break_sprite = ""
+on_break_sprite = "res://debris/debris_4.png"
 empty_sprite = ""
 spillage_limit = 3
 combustible = false
@@ -950,7 +950,7 @@ __meta__ = {
 "_edit_group_": true
 }
 smash_threshold = 200
-on_break_sprite = ""
+on_break_sprite = "res://debris/debris_6.png"
 empty_sprite = "res://kitchen/assets/vodka_empty.png"
 spillage_limit = 1
 combustible = false
@@ -997,7 +997,7 @@ __meta__ = {
 "_edit_group_": true
 }
 smash_threshold = 200
-on_break_sprite = ""
+on_break_sprite = "res://debris/debris_6.png"
 empty_sprite = "res://kitchen/assets/vodka_empty.png"
 spillage_limit = 1
 combustible = false
@@ -1169,7 +1169,7 @@ damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 38 )
 smash_threshold = 100
-on_break_sprite = ""
+on_break_sprite = "res://debris/debris_1.png"
 empty_sprite = ""
 spillage_limit = 1
 combustible = false
@@ -1266,6 +1266,8 @@ trigger = false
 _update_shape_index = 0
 
 [node name="LivingRoom" type="Node" parent="."]
+
+editor/display_folded = true
 
 [node name="Cushion1" type="RigidBody2D" parent="LivingRoom"]
 
@@ -1504,7 +1506,6 @@ _update_shape_index = 0
 
 [node name="Tank" type="RigidBody2D" parent="Lab"]
 
-editor/display_folded = true
 transform/pos = Vector2( -3705.09, 1295.67 )
 transform/scale = Vector2( 0.8, 0.8 )
 input/pickable = false
@@ -1533,7 +1534,7 @@ smash_threshold = 200
 on_break_sprite = ""
 empty_sprite = "res://living_room/assets/plant.png"
 spillage_limit = 1
-combustible = false
+combustible = true
 
 [node name="Sprite" type="Sprite" parent="Lab/Tank"]
 
