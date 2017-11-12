@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=1]
+[gd_scene load_steps=54 format=1]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://kitchen/kitchen_scene.png" type="Texture" id=2]
@@ -31,8 +31,8 @@
 [ext_resource path="res://cat_swipe/pixil-frame-1.png" type="Texture" id=29]
 [ext_resource path="res://cat_swipe/pixil-frame-2.png" type="Texture" id=30]
 [ext_resource path="res://cat_swipe/pixil-frame-3.png" type="Texture" id=31]
-[ext_resource path="res://Interactable.gd" type="Script" id=32]
-[ext_resource path="res://kitchen/assets/curtains.png" type="Texture" id=33]
+[ext_resource path="res://kitchen/assets/curtains.png" type="Texture" id=32]
+[ext_resource path="res://Interactable.gd" type="Script" id=33]
 [ext_resource path="res://kitchen/assets/cupboard_right_closed.png" type="Texture" id=34]
 [ext_resource path="res://kitchen/assets/cupboard_right_open.png" type="Texture" id=35]
 [ext_resource path="res://Smashable.gd" type="Script" id=36]
@@ -84,11 +84,6 @@ animations = [ {
 "name": "swipe",
 "speed": 10.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=6]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=7]
 
@@ -364,7 +359,7 @@ transform/scale = Vector2( 5, 5 )
 z/z = 1
 frames = SubResource( 5 )
 animation = "still"
-frame = 4
+frame = 15
 playing = true
 flip_h = true
 
@@ -376,35 +371,13 @@ shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Curtains" type="Area2D" parent="."]
+[node name="Curtains" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1195.82, 248.786 )
 transform/scale = Vector2( 3.16028, 3.14147 )
-input/pickable = true
-shapes/0/shape = SubResource( 6 )
-shapes/0/transform = Matrix32( 4.46917, 0, 0, 4.57341, 1.55458, -3.27618 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-script/script = ExtResource( 32 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Curtains"]
-
-transform/pos = Vector2( 1.55458, -3.27618 )
-transform/scale = Vector2( 4.46917, 4.57341 )
-shape = SubResource( 6 )
-trigger = false
-_update_shape_index = 0
-
-[node name="Sprite" type="Sprite" parent="Curtains"]
-
 z/z = -1
-texture = ExtResource( 33 )
+texture = ExtResource( 32 )
+script/script = ExtResource( 33 )
 
 [node name="Cupboard" type="Sprite" parent="."]
 
@@ -413,7 +386,7 @@ transform/pos = Vector2( 885.552, 559.691 )
 transform/scale = Vector2( 3, 3 )
 z/z = -1
 texture = ExtResource( 34 )
-script/script = ExtResource( 32 )
+script/script = ExtResource( 33 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Cupboard"]
 
@@ -521,7 +494,7 @@ transform/scale = Vector2( 3, 3 )
 z/z = -1
 texture = ExtResource( 34 )
 flip_h = true
-script/script = ExtResource( 32 )
+script/script = ExtResource( 33 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Cupboard1"]
 
@@ -637,7 +610,7 @@ transform/pos = Vector2( 1736.64, 298.421 )
 transform/scale = Vector2( 5.61963, 4.63778 )
 frames = SubResource( 9 )
 animation = "default"
-frame = 3
+frame = 2
 playing = true
 
 [node name="FireAnim" type="Particles2D" parent="Prefabs"]
@@ -675,7 +648,7 @@ script/script = ExtResource( 43 )
 transform/pos = Vector2( 162.103, 446.739 )
 transform/scale = Vector2( 6.60662, 5.80284 )
 texture = ExtResource( 44 )
-script/script = ExtResource( 32 )
+script/script = ExtResource( 33 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Fridge"]
 
