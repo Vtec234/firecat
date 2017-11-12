@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=1]
+[gd_scene load_steps=71 format=1]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://kitchen/kitchen_scene.png" type="Texture" id=2]
@@ -53,6 +53,8 @@
 [ext_resource path="res://living_room/assets/cushion.png" type="Texture" id=51]
 [ext_resource path="res://living_room/assets/starry_night.png" type="Texture" id=52]
 [ext_resource path="res://living_room/assets/plant.png" type="Texture" id=53]
+[ext_resource path="res://lab/assets/gas_tank.png" type="Texture" id=54]
+[ext_resource path="res://lab/assets/beaker_filled_1.png" type="Texture" id=55]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -138,7 +140,7 @@ extents = Vector2( 10, 10 )
 [sub_resource type="RectangleShape2D" id=13]
 
 custom_solver_bias = 0.0
-extents = Vector2( 36.1361, 36.5379 )
+extents = Vector2( 24.905, 30.4265 )
 
 [sub_resource type="RectangleShape2D" id=14]
 
@@ -264,26 +266,25 @@ __meta__ = {
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 693.862, 693.456 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 173.793, 0, 0, 0.894469, -685.227, 16.7383 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
-shapes/1/transform = Matrix32( 39.2314, -38.448, 0.726649, 0.741455, -2903.01, 416.484 )
+shapes/1/transform = Matrix32( 39.2314, -38.448, 0.72665, 0.741455, -2903.01, 416.484 )
 shapes/1/trigger = false
 shapes/2/shape = SubResource( 2 )
 shapes/2/transform = Matrix32( 4.19934, 0, 0, 41.4976, 861.998, -385.791 )
 shapes/2/trigger = false
 shapes/3/shape = SubResource( 2 )
-shapes/3/transform = Matrix32( 203.015, 0, 0, 3.96668, -1100.58, -730.494 )
+shapes/3/transform = Matrix32( 210.176, 0, 0, 3.96668, -1193.67, -730.494 )
 shapes/3/trigger = false
 shapes/4/shape = SubResource( 2 )
-shapes/4/transform = Matrix32( 105.043, 0, 0, 3.96668, -3958.7, 4.86755 )
+shapes/4/transform = Matrix32( 92.0743, 0, 0, 3.96668, -4130.99, 4.86755 )
 shapes/4/trigger = false
 shapes/5/shape = SubResource( 2 )
-shapes/5/transform = Matrix32( 4.19934, 0, 0, 41.4976, -2950.36, -392.592 )
+shapes/5/transform = Matrix32( 4.19934, 0, 0, 41.4976, -3255.71, -381.488 )
 shapes/5/trigger = false
 shapes/6/shape = SubResource( 2 )
 shapes/6/transform = Matrix32( 4.19934, 0, 0, 41.4976, -4504.42, 399.599 )
@@ -328,23 +329,23 @@ _update_shape_index = 2
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 
-transform/pos = Vector2( -1100.58, -730.494 )
-transform/scale = Vector2( 203.015, 3.96668 )
+transform/pos = Vector2( -1193.67, -730.494 )
+transform/scale = Vector2( 210.176, 3.96668 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 3
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
 
-transform/pos = Vector2( -3958.7, 4.86755 )
-transform/scale = Vector2( 105.043, 3.96668 )
+transform/pos = Vector2( -4130.99, 4.86755 )
+transform/scale = Vector2( 92.0743, 3.96668 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 4
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
 
-transform/pos = Vector2( -2950.36, -392.592 )
+transform/pos = Vector2( -3255.71, -381.488 )
 transform/scale = Vector2( 4.19934, 41.4976 )
 shape = SubResource( 2 )
 trigger = false
@@ -467,6 +468,8 @@ trigger = false
 _update_shape_index = 0
 
 [node name="Kitchen" type="Node" parent="."]
+
+editor/display_folded = true
 
 [node name="Cereal1" type="RigidBody2D" parent="Kitchen"]
 
@@ -1013,6 +1016,7 @@ _update_shape_index = 0
 
 [node name="cooker" type="Sprite" parent="Kitchen"]
 
+editor/display_folded = true
 transform/pos = Vector2( 1191.72, 524.054 )
 transform/scale = Vector2( 3.49047, 2.84513 )
 z/z = -1
@@ -1213,6 +1217,7 @@ _update_shape_index = 0
 "platform",
 ]]
 
+editor/display_folded = true
 transform/pos = Vector2( -1562.26, 501.222 )
 input/pickable = false
 shapes/0/shape = SubResource( 11 )
@@ -1238,6 +1243,7 @@ _update_shape_index = 0
 "platform",
 ]]
 
+editor/display_folded = true
 transform/pos = Vector2( -1562.26, 501.222 )
 input/pickable = false
 shapes/0/shape = SubResource( 12 )
@@ -1353,6 +1359,7 @@ _update_shape_index = 0
 
 [node name="Painting" type="Sprite" parent="LivingRoom"]
 
+editor/display_folded = true
 transform/pos = Vector2( -1571.42, 260.452 )
 transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 52 )
@@ -1403,6 +1410,7 @@ _update_shape_index = 0
 
 [node name="Plant" type="RigidBody2D" parent="LivingRoom"]
 
+editor/display_folded = true
 transform/pos = Vector2( -630.18, 557.771 )
 input/pickable = false
 shapes/0/shape = SubResource( 15 )
@@ -1443,6 +1451,145 @@ texture = ExtResource( 53 )
 transform/pos = Vector2( 22.6169, -45.8634 )
 transform/scale = Vector2( 1.03923, 1 )
 shape = SubResource( 15 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Lab" type="Node" parent="."]
+
+[node name="Plant1" type="RigidBody2D" parent="Lab"]
+
+editor/display_folded = true
+transform/pos = Vector2( -2755.25, 1259.8 )
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 1.03923, 0, 0, 1, 22.6169, -45.8634 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 38 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://living_room/assets/plant.png"
+spillage_limit = 1
+combustible = false
+
+[node name="Sprite" type="Sprite" parent="Lab/Plant1"]
+
+transform/pos = Vector2( 17.0278, -56.2808 )
+transform/scale = Vector2( 5, 5 )
+texture = ExtResource( 53 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lab/Plant1"]
+
+transform/pos = Vector2( 22.6169, -45.8634 )
+transform/scale = Vector2( 1.03923, 1 )
+shape = SubResource( 15 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Tank" type="RigidBody2D" parent="Lab"]
+
+editor/display_folded = true
+transform/pos = Vector2( -3705.09, 1295.67 )
+transform/scale = Vector2( 0.8, 0.8 )
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 1.03923, 0, 0, 1, 22.6169, -45.8634 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 38 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://living_room/assets/plant.png"
+spillage_limit = 1
+combustible = false
+
+[node name="Sprite" type="Sprite" parent="Lab/Tank"]
+
+transform/pos = Vector2( 17.0278, -56.2808 )
+transform/scale = Vector2( 5, 5 )
+texture = ExtResource( 54 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lab/Tank"]
+
+transform/pos = Vector2( 22.6169, -45.8634 )
+transform/scale = Vector2( 1.03923, 1 )
+shape = SubResource( 15 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Beaker1" type="RigidBody2D" parent="Lab"]
+
+transform/pos = Vector2( -3339.22, 1193.32 )
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 18.4385, 6.44275 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 38 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://living_room/assets/cushion.png"
+spillage_limit = 1
+combustible = false
+
+[node name="Sprite" type="Sprite" parent="Lab/Beaker1"]
+
+transform/pos = Vector2( 17.0278, -10.8544 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 55 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lab/Beaker1"]
+
+transform/pos = Vector2( 18.4385, 6.44275 )
+shape = SubResource( 13 )
 trigger = false
 _update_shape_index = 0
 
