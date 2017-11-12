@@ -9,6 +9,7 @@ var times_spilled = 0
 const FORCE_DAMPING = 20
 
 func _ready():
+	self.add_to_group("smashable")
 	self.set_fixed_process(true)
 
 func _fixed_process(delta):
@@ -25,6 +26,7 @@ func _fixed_process(delta):
 					spill.set_pos(self.get_global_pos())
 					self.get_tree().get_root().get_node("Game").add_child(spill)
 					times_spilled += 1
+					spill.is_on_fire = true
 	elif empty_sprite != "":
 		self.get_node("Sprite").set_texture(load(empty_sprite))
 	else:

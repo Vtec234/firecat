@@ -6,6 +6,7 @@ const MOVE_SPEED = 700
 const GRAVITY = 5000
 const JUMP_SPEED = 2000
 const SMASH_COOLDOWN = 0.5
+const INTERACTION_DIST = 150
 var smash_dir = Vector2(0, 0)
 var try_smash = false
 var time_till_smash = 0
@@ -26,7 +27,8 @@ func _input(ev):
 			time_till_smash = SMASH_COOLDOWN
 			
 	if ev.type == InputEvent.MOUSE_MOTION:
-		smash_dir = (ev.pos - self.get_global_pos()).normalized()
+		print(ev.pos)
+		smash_dir = (ev.pos + self.get_tree().get_root().get_node("Game").get_node("Camera").get_global_pos() - self.get_global_pos()).normalized()
 		self.update()
 			
 func _draw():
@@ -64,11 +66,24 @@ func _fixed_process(delta):
 		time_till_smash = max(0, time_till_smash - delta)
 		
 	if try_smash == true:
-		var space_state = get_world_2d().get_direct_space_state()
-		# use global coordinates, not local to node
-		var result = space_state.intersect_ray(self.get_global_pos(), self.get_global_pos() + 1000*smash_dir, [self])
-		if not result.empty():
-			if result.collider.get_layer_mask() & 2 != 0:
-				result.collider.set_applied_force(smash_dir * 2000000 *delta)
-				print(result.collider.get_applied_force())
+		var smashables = self.get_tree().get_nodes_in_group("smashable")
+		var closest = smashables[0]
+		var closest_type = "smashable"
+		var pos = self.get_global_pos()
+		var dist = (closest.get_global_pos() - pos).length()
+		for s in smashables:
+			if (s.get_global_pos() - pos).length() < dist:
+				closest = s
+				dist = (closest.get_global_pos() - pos).length()
+		for i in self.get_tree().get_nodes_in_group("interactable"):
+			if (i.get_global_pos() - pos).length() < dist:
+				closest = i
+				dist = (closest.get_global_pos() - pos).length()
+				closest_type = "interactable"
+		if dist < INTERACTION_DIST:
+			if closest_type == "smashable":
+				closest.set_applied_force(smash_dir * 800000 * delta)
+			else:
+				closest.interact()
+				
 		try_smash = false

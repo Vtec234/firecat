@@ -19,7 +19,7 @@ func _ready():
 func _process(dt):
 	# Adjust camera
 	var cam_pos = cam.get_pos()
-	cam.set_pos(Vector2(min(cat.get_pos().x - 640, 0), cam_pos.y))
+	cam.set_pos(Vector2(min(cat.get_pos().x - 640, 280), cam_pos.y))
 	
 	# Count fires
 	var fires_started = self.get_tree().get_nodes_in_group("on_fire").size()
