@@ -27,7 +27,7 @@ func _input(ev):
 			time_till_smash = SMASH_COOLDOWN
 			
 	if ev.type == InputEvent.MOUSE_MOTION:
-		print(ev.pos)
+		# Set smash direction towards mouse position
 		smash_dir = (ev.pos + self.get_tree().get_root().get_node("Game").get_node("Camera").get_global_pos() - self.get_global_pos()).normalized()
 		self.update()
 			
@@ -61,6 +61,13 @@ func _fixed_process(delta):
 		motion = n.slide(motion)
 		vel = n.slide(vel)
 		self.move(motion)
+		
+	var platforms = self.get_tree().get_nodes_in_group("platform")
+	for p in platforms:
+		var space_state = get_world_2d().get_direct_space_state()
+		# use global coordinates, not local to node
+		var result = space_state.intersect_ray(self.get_global_pos(), Vector2(50,100) )
+	
 		
 	if time_till_smash >= 0.001:
 		time_till_smash = max(0, time_till_smash - delta)
