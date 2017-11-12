@@ -69,6 +69,6 @@ func _fixed_process(delta):
 		var result = space_state.intersect_ray(self.get_global_pos(), self.get_global_pos() + 1000*smash_dir, [self])
 		if not result.empty():
 			if result.collider.get_layer_mask() & 2 != 0:
-				result.collider.set_applied_force(smash_dir * 200000 *delta)
+				result.collider.set_applied_force(smash_dir * 2000000 *delta)
 				print(result.collider.get_applied_force())
 		try_smash = false
