@@ -1,0 +1,21 @@
+[gd_scene format=1]
+
+[node name="Menu" type="Node"]
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 562.0
+margin/top = 454.0
+margin/right = 754.0
+margin/bottom = 525.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "START GAME"
+flat = false
+
+
