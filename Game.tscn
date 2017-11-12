@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=1]
+[gd_scene load_steps=68 format=1]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://kitchen/kitchen_scene.png" type="Texture" id=2]
@@ -36,15 +36,23 @@
 [ext_resource path="res://kitchen/assets/cupboard_right_closed.png" type="Texture" id=34]
 [ext_resource path="res://kitchen/assets/cupboard_right_open.png" type="Texture" id=35]
 [ext_resource path="res://Smashable.gd" type="Script" id=36]
-[ext_resource path="res://kitchen/assets/cooker.png" type="Texture" id=37]
-[ext_resource path="res://Flammable.gd" type="Script" id=38]
-[ext_resource path="res://flame/flame_0.png" type="Texture" id=39]
-[ext_resource path="res://flame/flame_1.png" type="Texture" id=40]
-[ext_resource path="res://flame/flame_2.png" type="Texture" id=41]
-[ext_resource path="res://flame/flame_3.png" type="Texture" id=42]
-[ext_resource path="res://fire.png" type="Texture" id=43]
-[ext_resource path="res://kitchen/assets/fridge_closed.png" type="Texture" id=44]
-[ext_resource path="res://kitchen/assets/fridge_opened.png" type="Texture" id=45]
+[ext_resource path="res://kitchen/assets/cereal.png" type="Texture" id=37]
+[ext_resource path="res://kitchen/assets/vodka.png" type="Texture" id=38]
+[ext_resource path="res://kitchen/assets/cooker.png" type="Texture" id=39]
+[ext_resource path="res://Flammable.gd" type="Script" id=40]
+[ext_resource path="res://flame/flame_0.png" type="Texture" id=41]
+[ext_resource path="res://flame/flame_1.png" type="Texture" id=42]
+[ext_resource path="res://flame/flame_2.png" type="Texture" id=43]
+[ext_resource path="res://flame/flame_3.png" type="Texture" id=44]
+[ext_resource path="res://fire.png" type="Texture" id=45]
+[ext_resource path="res://kitchen/assets/fridge_closed.png" type="Texture" id=46]
+[ext_resource path="res://kitchen/assets/fridge_opened.png" type="Texture" id=47]
+[ext_resource path="res://kitchen/assets/banana.png" type="Texture" id=48]
+[ext_resource path="res://kitchen/assets/paper_towel.png" type="Texture" id=49]
+[ext_resource path="res://kitchen/assets/toaster.png" type="Texture" id=50]
+[ext_resource path="res://living_room/assets/cushion.png" type="Texture" id=51]
+[ext_resource path="res://living_room/assets/starry_night.png" type="Texture" id=52]
+[ext_resource path="res://living_room/assets/plant.png" type="Texture" id=53]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -60,6 +68,11 @@ extents = Vector2( 10, 10.2632 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.94012, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.8957, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -88,7 +101,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11.6548, 10 )
+extents = Vector2( 19.8525, 9.58144 )
 
 [sub_resource type="ImageTexture" id=7]
 
@@ -101,11 +114,36 @@ lossy_quality = 0.7
 [sub_resource type="SpriteFrames" id=8]
 
 animations = [ {
-"frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 35.315, 45.9089 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 47.2012, 32.8768 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 36.1361, 36.5379 )
+
+[sub_resource type="RectangleShape2D" id=14]
+
+custom_solver_bias = 0.0
+extents = Vector2( 44.6318, 25.0543 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+custom_solver_bias = 0.0
+extents = Vector2( 44.2615, 152.835 )
 
 [node name="Game" type="Node"]
 
@@ -340,6 +378,31 @@ shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
+[node name="Couch" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( -892.259, 559.222 )
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 35.6077, 0, 0, 0.72728, -160.703, 7.00714 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1026
+one_way_collision/direction = Vector2( 0, 1 )
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Couch" groups=[
+"platform",
+]]
+
+transform/pos = Vector2( -160.703, 7.00714 )
+transform/scale = Vector2( 35.6077, 0.72728 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Cat" type="KinematicBody2D" parent="."]
 
 transform/pos = Vector2( 548.098, 292.566 )
@@ -359,7 +422,7 @@ transform/scale = Vector2( 5, 5 )
 z/z = 1
 frames = SubResource( 5 )
 animation = "still"
-frame = 12
+frame = 14
 playing = true
 flip_h = true
 
@@ -389,11 +452,11 @@ script/script = ExtResource( 33 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Cupboard"]
 
+z/z = -1
 texture = ExtResource( 35 )
 
 [node name="OilBottle" type="RigidBody2D" parent="Cupboard"]
 
-editor/display_folded = true
 transform/pos = Vector2( -14.1144, -12.5505 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
@@ -485,6 +548,67 @@ shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
+[node name="Cupboard3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 884.552, 99.9309 )
+transform/scale = Vector2( 3, 2.79315 )
+z/z = -1
+texture = ExtResource( 34 )
+script/script = ExtResource( 33 )
+
+[node name="SpriteReplacer" type="Sprite" parent="Cupboard3"]
+
+transform/pos = Vector2( -1, 0.358021 )
+z/z = -1
+texture = ExtResource( 35 )
+
+[node name="Cereal" type="RigidBody2D" parent="Cupboard3"]
+
+transform/pos = Vector2( -8.75961, 19.8135 )
+transform/scale = Vector2( 0.333333, 0.333333 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.05
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = ""
+spillage_limit = 3
+
+[node name="Sprite" type="Sprite" parent="Cupboard3/Cereal"]
+
+transform/pos = Vector2( 0, -1.5028 )
+transform/scale = Vector2( 1.9, 1.99392 )
+texture = ExtResource( 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboard3/Cereal"]
+
+transform/scale = Vector2( 1.35433, 3.19482 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Cupboard1" type="Sprite" parent="."]
 
 editor/display_folded = true
@@ -497,13 +621,14 @@ script/script = ExtResource( 33 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Cupboard1"]
 
+z/z = -1
 texture = ExtResource( 35 )
 flip_h = true
 
 [node name="OilBottle" type="RigidBody2D" parent="Cupboard1"]
 
 editor/display_folded = true
-transform/pos = Vector2( -14.1144, -12.5505 )
+transform/pos = Vector2( -10.7811, -12.5505 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
 shapes/0/shape = SubResource( 6 )
@@ -549,7 +674,6 @@ _update_shape_index = 0
 
 [node name="OilBottle1" type="RigidBody2D" parent="Cupboard1"]
 
-editor/display_folded = true
 transform/pos = Vector2( 9.90704, -12.4082 )
 transform/scale = Vector2( 0.333333, 0.333333 )
 input/pickable = false
@@ -594,25 +718,137 @@ shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
+[node name="Cupboard2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 593, 98.9309 )
+transform/scale = Vector2( 3, 2.80685 )
+z/z = -1
+texture = ExtResource( 34 )
+flip_h = true
+script/script = ExtResource( 33 )
+
+[node name="SpriteReplacer" type="Sprite" parent="Cupboard2"]
+
+z/z = -1
+texture = ExtResource( 35 )
+flip_h = true
+
+[node name="Vodka" type="RigidBody2D" parent="Cupboard2"]
+
+editor/display_folded = true
+transform/pos = Vector2( -10.7811, -14.2593 )
+transform/scale = Vector2( 0.333333, 0.386735 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.05
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://kitchen/assets/vodka_empty.png"
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Cupboard2/Vodka"]
+
+transform/scale = Vector2( 1.9, 1.9 )
+texture = ExtResource( 38 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboard2/Vodka"]
+
+transform/scale = Vector2( 1.35433, 3.19482 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Vodka 2" type="RigidBody2D" parent="Cupboard2"]
+
+transform/pos = Vector2( 10.2404, -14.1882 )
+transform/scale = Vector2( 0.333333, 0.388958 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.05
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://kitchen/assets/vodka_empty.png"
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Cupboard2/Vodka 2"]
+
+transform/scale = Vector2( 1.9, 1.9 )
+texture = ExtResource( 38 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboard2/Vodka 2"]
+
+transform/scale = Vector2( 1.35433, 3.19482 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
 [node name="cooker" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 1191.72, 524.054 )
 transform/scale = Vector2( 3.49047, 2.84513 )
 z/z = -1
-texture = ExtResource( 37 )
+texture = ExtResource( 39 )
 script/script = ExtResource( 33 )
 
 [node name="stovetop" type="Node2D" parent="cooker"]
 
 transform/pos = Vector2( -17.5449, -42.3979 )
 transform/scale = Vector2( 0.0383344, 0.057701 )
-script/script = ExtResource( 38 )
+script/script = ExtResource( 40 )
 
 [node name="SpriteReplacer" type="Sprite" parent="cooker"]
 
-texture = ExtResource( 37 )
+z/z = -1
+texture = ExtResource( 39 )
 
 [node name="Prefabs" type="Node" parent="."]
+
+editor/display_folded = true
 
 [node name="FireAnim2" type="AnimatedSprite" parent="Prefabs"]
 
@@ -620,7 +856,7 @@ transform/pos = Vector2( 1736.64, 298.421 )
 transform/scale = Vector2( 5.61963, 4.63778 )
 frames = SubResource( 8 )
 animation = "default"
-frame = 3
+frame = 1
 playing = true
 
 [node name="FireAnim" type="Particles2D" parent="Prefabs"]
@@ -630,7 +866,7 @@ transform/scale = Vector2( 1.64281, 1.40712 )
 config/amount = 8
 config/lifetime = 0.5
 config/process_mode = 1
-config/texture = ExtResource( 43 )
+config/texture = ExtResource( 45 )
 params/direction = 180.0
 params/spread = 30.0
 params/linear_velocity = 100.0
@@ -651,17 +887,420 @@ params/anim_initial_pos = 0.0
 [node name="Flammable" type="Sprite" parent="Prefabs"]
 
 transform/pos = Vector2( 1911.72, 514.818 )
-script/script = ExtResource( 38 )
+script/script = ExtResource( 40 )
 
 [node name="Fridge" type="Sprite" parent="."]
 
 transform/pos = Vector2( 162.103, 446.739 )
 transform/scale = Vector2( 6.60662, 5.80284 )
-texture = ExtResource( 44 )
+z/z = -1
+texture = ExtResource( 46 )
 script/script = ExtResource( 33 )
 
 [node name="SpriteReplacer" type="Sprite" parent="Fridge"]
 
-texture = ExtResource( 45 )
+z/z = -1
+texture = ExtResource( 47 )
+
+[node name="Banana" type="RigidBody2D" parent="Fridge"]
+
+transform/pos = Vector2( -6.15026, -25.1491 )
+transform/scale = Vector2( 0.151363, 0.173562 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.05
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+smash_threshold = 100
+on_break_sprite = "res://kitchen/assets/oil_1.png"
+empty_sprite = ""
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Fridge/Banana"]
+
+transform/scale = Vector2( 1.9, 1.9 )
+texture = ExtResource( 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/Banana"]
+
+transform/scale = Vector2( 1.35433, 3.19482 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Banana1" type="RigidBody2D" parent="Fridge"]
+
+transform/pos = Vector2( 3.78518, -9.80745 )
+transform/scale = Vector2( 0.151363, 0.173562 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.05
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+smash_threshold = 100
+on_break_sprite = "res://kitchen/assets/oil_1.png"
+empty_sprite = ""
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Fridge/Banana1"]
+
+transform/scale = Vector2( 1.9, 1.9 )
+texture = ExtResource( 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/Banana1"]
+
+transform/scale = Vector2( 1.35433, 3.19482 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="PaperTowel" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 810.814, 388.819 )
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 16.2902, -8.14508 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+smash_threshold = 20
+on_break_sprite = ""
+empty_sprite = ""
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="PaperTowel"]
+
+transform/pos = Vector2( 17.0278, -10.8544 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 49 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PaperTowel"]
+
+transform/pos = Vector2( 16.2902, -8.14508 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Toaster" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 925.111, 387.182 )
+input/pickable = false
+shapes/0/shape = SubResource( 10 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 17.1046, 5.70154 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://kitchen/assets/toaster.png"
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Toaster"]
+
+transform/pos = Vector2( 17.0278, -10.8544 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toaster"]
+
+transform/pos = Vector2( 17.1046, 5.70154 )
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Cushion1" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( -901.301, 528.498 )
+input/pickable = false
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 17.7034, -10.4644 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://living_room/assets/cushion.png"
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Cushion1"]
+
+transform/pos = Vector2( 17.0278, -10.8544 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 51 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cushion1"]
+
+transform/pos = Vector2( 17.7034, -10.4644 )
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Cushion2" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( -1233.49, 531.573 )
+input/pickable = false
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 17.7034, -10.4644 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://living_room/assets/cushion.png"
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Cushion2"]
+
+transform/pos = Vector2( 17.0278, -10.8544 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 51 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cushion2"]
+
+transform/pos = Vector2( 17.7034, -10.4644 )
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 0
+
+[node name="starry_night" type="Sprite" parent="."]
+
+transform/pos = Vector2( -1597.04, 180.563 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 52 )
+script/script = ExtResource( 33 )
+
+[node name="Painting" type="RigidBody2D" parent="starry_night"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 14 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.639099, 0.126465 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://living_room/assets/starry_night.png"
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="starry_night/Painting"]
+
+texture = ExtResource( 52 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="starry_night/Painting"]
+
+transform/pos = Vector2( 0.639099, 0.126465 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Plant" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( -630.18, 557.771 )
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 24.4711, -45.8634 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = "res://living_room/assets/plant.png"
+spillage_limit = 1
+
+[node name="Sprite" type="Sprite" parent="Plant"]
+
+transform/pos = Vector2( 17.0278, -56.2808 )
+transform/scale = Vector2( 5, 5 )
+texture = ExtResource( 53 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant"]
+
+transform/pos = Vector2( 24.4711, -45.8634 )
+shape = SubResource( 13 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Cereal1" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 340.822, 396.824 )
+transform/scale = Vector2( 0.999999, 0.931048 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1.35433, 0, 0, 3.19482, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.05
+gravity_scale = 4.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+smash_threshold = 200
+on_break_sprite = ""
+empty_sprite = ""
+spillage_limit = 3
+
+[node name="Sprite" type="Sprite" parent="Cereal1"]
+
+transform/pos = Vector2( 0, -1.5028 )
+transform/scale = Vector2( 1.9, 1.99392 )
+texture = ExtResource( 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cereal1"]
+
+transform/scale = Vector2( 1.35433, 3.19482 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
 
 
